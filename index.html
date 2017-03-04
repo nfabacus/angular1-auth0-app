@@ -8,12 +8,16 @@
   <title>AngularJs Auth0</title>
 
   <!-- Latest patch release (recommended for production) -->
-<script src="http://cdn.auth0.com/js/lock/10.x.y/lock.min.js"></script>
+<script src="http://cdn.auth0.com/js/lock/10.12.2/lock.min.js"></script>
 
 </head>
 <body ng-init="hello = 'hello world!'">
 
-  {{ hello }}
+  <toolbar></toolbar>
+
+  <div layout-padding>
+    <ui-view></ui-view>
+  </div>
 
   <script src="node_modules/angular/angular.js"></script>
   <script src="node_modules/angular-animate/angular-animate.js"></script>
@@ -25,5 +29,7 @@
   <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
 
   <script src="app.js"></script>
+  <script src="components/toolbar/toolbar.dir.js"></script>
+  <script src="components/profile/profile.ctr.js"></script>
 </body>
 </html>
