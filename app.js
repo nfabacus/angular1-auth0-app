@@ -28,5 +28,19 @@
       };
 
       $httpProvider.interceptors.push('jwtInterceptor');
+    })
+    .run(function($rootScope, auth, store, jwtHelper, $location){
+
+      $rootScope.$on('$locationChangeStart', function(){
+
+        var token = store.get('id_token');
+        if(token) {
+          if(!jwtHelper.isTokenExpired(token)) {
+            auth.authenticate(store.get('profile'), token);
+          }
+        } else {
+          $location.path('/home');
+        }
+      });
     });
 })();
