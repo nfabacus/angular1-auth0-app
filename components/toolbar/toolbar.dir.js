@@ -27,7 +27,7 @@
       // are saved in local storage with the store service
       auth.signin({}, function(profile, token) {
         store.set('profile', profile);
-        store.set('token', token);
+        store.set('id_token', token);
         $location.path('/home');
       }, function(error) {
         console.log(error);

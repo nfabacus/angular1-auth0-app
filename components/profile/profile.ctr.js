@@ -1,4 +1,4 @@
- (function(){
+(function(){
 
   'use strict';
 
@@ -14,7 +14,6 @@
     vm.message;
 
     vm.profile = store.get('profile');
-    vm.token = store.get('token');
 
     function getMessage(){
       $http.get('http://localhost:3001/api/public', {
@@ -25,16 +24,8 @@
     }
 
     function getSecretMessage(){
-      $http({
-        method: 'GET',
-        url: 'http://localhost:3001/api/private',
-        headers: {
-          Authorization: 'Bearer ' + vm.token
-        }
-      }).then(function(response){
+      $http.get('http://localhost:3001/api/private').then(function(response){
         vm.message = response.data.message;
-      }).catch(function(response){
-        console.log(response);
       });
     }
   }
