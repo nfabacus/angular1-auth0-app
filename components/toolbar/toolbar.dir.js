@@ -41,7 +41,7 @@
       // token from local storage
       auth.signout();
       store.remove('profile');
-      store.remove('token');
+      store.remove('id_token');
       $location.path('/home');
     }
   }

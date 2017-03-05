@@ -2,13 +2,16 @@ var express = require('express');
 var app = express();
 var jwt = require('express-jwt');
 var cors = require('cors');
+require('dotenv').config();
 
 app.use(cors());
 
 var authCheck = jwt({
-  secret: new Buffer('ZuqySGi8_WtEQhSSdL-WTrVnk8ivjMA5BmqHUEFsCRf7EBqCWKlKj7wD7MxuyfJG'),
-  audience: 'VsJqiAUw2Q43QID4hRsS8J4Atzn0DDPA'
+  secret: new Buffer(process.env.clientSecret),
+  audience: process.env.clientID
 });
+
+console.log("process.env.clientID: ", process.env.clientID);
 
 app.get('/api/public', function(req, res){
   res.json({ message: "Hello from a public endpoint!  You don't need to be authenticated to see this"});
