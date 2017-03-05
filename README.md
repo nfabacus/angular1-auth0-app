@@ -6,7 +6,7 @@ npm install
 ```
 
 ## To run the app
-To spin it up on server, just type
+To spin it up on server, just type (first you need to install http-server via npm globally if you have not got one.)
 ```
 http-server
 ```

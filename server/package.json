@@ -1,0 +1,16 @@
+{
+  "name": "angularjs-auth-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.1",
+    "express": "^4.15.0",
+    "express-jwt": "^5.1.0"
+  }
+}
